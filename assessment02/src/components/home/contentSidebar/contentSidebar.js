@@ -97,49 +97,43 @@ const ContentSidebar = (props) => {
 
   return (
     <div className={cx}>
-      <div className={'container'}>
-        <div className={styles['title']}>
-          <span>ผู้สอน</span>
-        </div>
-        {contents.map((content, key) => (
-          <div key={key} className={styles['card']}>
-            <div className={styles['header']}>
-              <div className={styles['instructor-image']}>
-                <img src={content.imgSrc} />
-              </div>
-              <div className={styles['instructor-title']}>
-                <a className={styles['instructor-name']}>
-                  {content.title}
-                </a>
-                <div
-                  className={styles['instructor-rating']}>
-                  <p>
-                    {startIcon} {content.avgScore}{' '}
-                    คะแนนเฉลี่ย
-                  </p>
-                  <p>
-                    {commentIcon} {content.comment} รีวิว
-                  </p>
-                  <p>
-                    {playIcon} {content.course} คอร์ส
-                  </p>
-                </div>
-              </div>
+      <div className={styles['title']}>
+        <span>ผู้สอน</span>
+      </div>
+      {contents.map((content, key) => (
+        <div key={key} className={styles['card']}>
+          <div className={styles['header']}>
+            <div className={styles['instructor-image']}>
+              <img src={content.imgSrc} />
             </div>
-            <div className={styles['content']}>
-              <ul className={styles['details']}>
-                {content.details.map((detail, key) => (
-                  <li
-                    key={key}
-                    className={styles['detail']}>
-                    {detail}
-                  </li>
-                ))}
-              </ul>
+            <div className={styles['instructor-title']}>
+              <a className={styles['instructor-name']}>
+                {content.title}
+              </a>
+              <div className={styles['instructor-rating']}>
+                <p>
+                  {startIcon} {content.avgScore} คะแนนเฉลี่ย
+                </p>
+                <p>
+                  {commentIcon} {content.comment} รีวิว
+                </p>
+                <p>
+                  {playIcon} {content.course} คอร์ส
+                </p>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+          <div className={styles['content']}>
+            <ul className={styles['details']}>
+              {content.details.map((detail, key) => (
+                <li key={key} className={styles['detail']}>
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
     </div>
   )
 }

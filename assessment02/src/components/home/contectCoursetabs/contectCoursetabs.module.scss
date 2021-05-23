@@ -6,5 +6,9 @@
   padding: 10px 15px;
   margin-bottom: 16px;
 
-  width: 73%;
+  width: 100%;
+
+  @media (min-width: $screen-xl-min) {
+    width: 73%;
+  }
 }

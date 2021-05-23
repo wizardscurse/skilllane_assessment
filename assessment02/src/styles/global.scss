@@ -45,4 +45,16 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   width: 100%;
+
+  @media (min-width: $screen-md-min) {
+    width: 750px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    width: 970px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    width: 1170px;
+  }
 }

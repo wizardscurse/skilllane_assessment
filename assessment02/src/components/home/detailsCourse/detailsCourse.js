@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { useMediaQuery } from 'react-responsive'
 
@@ -18,26 +18,31 @@ const defaultTabs = [
     text: 'รายละเอียด',
     isDefault: true,
     showOnMobile: true,
+    showOnDesktop: true,
   },
   {
     value: 'howToPay',
     text: 'วิธีชำระเงิน',
     showOnMobile: false,
+    showOnDesktop: true,
   },
   {
     value: 'chatRoom',
     text: 'ห้องสนทนา',
     showOnMobile: false,
+    showOnDesktop: true,
   },
   {
     value: 'instructor',
     text: 'ผู้สอน',
     showOnMobile: true,
+    showOnDesktop: false,
   },
   {
     value: 'review',
     text: 'รีวิว',
     showOnMobile: true,
+    showOnDesktop: true,
   },
 ]
 
@@ -47,7 +52,7 @@ const DetailsCourse = (props) => {
   const isDesktop = useMediaQuery({ minWidth: screenXlMin })
 
   const tabs = isDesktop
-    ? defaultTabs
+    ? defaultTabs.filter((tab) => tab.showOnDesktop)
     : defaultTabs.filter((tab) => tab.showOnMobile)
 
   const defaultTabValue = tabs.find(
@@ -56,12 +61,18 @@ const DetailsCourse = (props) => {
   const [selectedTabValue, setSelectedTabValue] =
     useState(defaultTabValue)
 
+  useEffect(() => {
+    if (isDesktop && selectedTabValue === 'instructor') {
+      setSelectedTabValue('details')
+    }
+  }, [isDesktop, selectedTabValue])
   return (
     <div className={cx}>
       <div className="container">
         <div className={styles['container']}>
           <Tabs
             tabs={tabs}
+            value={selectedTabValue}
             onChange={(value) => setSelectedTabValue(value)}
           />
           <div>

@@ -2,9 +2,10 @@
 
 .root {
   .container {
-    width: 73%;
-  }
+    width: 100%;
 
-  .details {
+    @media (min-width: $screen-xl-min) {
+      width: 73%;
+    }
   }
 }
