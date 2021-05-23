@@ -1,0 +1,80 @@
+@import '../../../styles/index.scss';
+
+.root {
+  background-size: cover;
+  background-image: url('https://resource.skilllane.com/banner_academic/tu_banner.png');
+  background-repeat: round;
+  background-color: #fff;
+
+  width: 100%;
+  height: 250px;
+  padding-top: 35px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
+  .header {
+    @include typo-heading-1($black-medium-color);
+    margin-bottom: 12px;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 1.33em;
+    }
+  }
+
+  .sub-header {
+    display: table;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: $red-high-color;
+
+    img {
+      vertical-align: baseline;
+      margin-right: 5px;
+      height: 12px;
+      width: 55px;
+    }
+  }
+
+  .degree {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .review {
+    margin-right: 8px;
+    display: inline-flex;
+
+    .stars {
+      margin-right: 8px;
+      align-self: center;
+    }
+
+    .star-container {
+      float: left;
+      background-image: url('https://www.skilllane.com/assets/raty/star-stroke-5aa3077ffda78ce9885e9a11639d53f22c0fe35392066a7fdcb2a53bc404eb8f.svg');
+      background-repeat: no-repeat;
+      line-height: 1;
+      height: 22px;
+      margin-right: 2px;
+
+      .start {
+        width: 22px;
+      }
+
+      .start-great {
+        clip-path: inset(0px 8px 0px 0px);
+      }
+    }
+
+    .details {
+      @include typo-heading-3($black-low-color);
+      margin-right: 8px;
+    }
+
+    .share {
+      @include typo-heading-5($black-low-color);
+      margin-right: 8px;
+      width: 105px;
+    }
+  }
+}

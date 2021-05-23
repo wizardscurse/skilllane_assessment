@@ -1,0 +1,33 @@
+@import '../../../../styles/index.scss';
+
+.root {
+  @include typo-paragraph-1($black-medium-color);
+  display: block;
+  overflow: hidden;
+
+  .read-more {
+    @include typo-heading-3($green-medium-color);
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    > span {
+      background-color: $white-high-color;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  .read-more:hover {
+    text-decoration: underline;
+    text-decoration-color: $green-medium-color;
+    text-decoration-thickness: 2px;
+  }
+
+  .hidden {
+    max-height: 130px;
+  }
+
+  .show {
+    height: 100%;
+  }
+}

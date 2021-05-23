@@ -1,0 +1,164 @@
+@import '../../../styles/index.scss';
+
+.root {
+  position: relative;
+
+  .content {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    @media (max-width: $screen-lg-max) {
+      display: block;
+    }
+  }
+
+  .video-container {
+    width: 47%;
+    margin-right: 15px;
+
+    img {
+      width: 100%;
+    }
+
+    @media (max-width: $screen-lg-max) {
+      width: 100%;
+      margin-right: unset;
+    }
+  }
+
+  .course-container {
+    width: 25%;
+    padding: 0px 15px 15px;
+    border-style: solid;
+    border-width: 1px;
+
+    min-height: calc(100% - 5px);
+
+    @media (max-width: $screen-lg-max) {
+      width: 100%;
+      margin-top: 20px;
+      margin-right: unset;
+    }
+  }
+
+  .space {
+    height: 4px;
+  }
+
+  .border-green {
+    height: 4px;
+    background-color: $green-medium-color;
+  }
+
+  .price-container {
+    margin-top: 14px;
+    text-align: center;
+
+    @media (max-width: $screen-lg-max) {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+
+      margin: 15px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+      flex-direction: row-reverse;
+
+      margin: 15px;
+    }
+
+    .price,
+    .details {
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .price {
+      margin-bottom: 12px;
+
+      > span {
+        @include typo-heading-1($black-medium-color);
+        font-weight: bold;
+      }
+      > div {
+        @include typo-heading-4('');
+        margin-top: 8px;
+        height: 50px;
+      }
+
+      @media (max-width: $screen-lg-max) {
+        flex: 1 0 50%;
+        white-space: nowrap;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+
+    .details {
+      @include typo-paragraph-2($black-medium-color);
+      text-align: left;
+
+      @media (max-width: $screen-lg-max) {
+        flex: 1 0 50%;
+        white-space: nowrap;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .detail {
+        display: flex;
+        width: 100%;
+
+        span {
+          padding-left: 16px;
+        }
+      }
+
+      .check {
+        svg path {
+          fill: $green-medium-color;
+        }
+      }
+
+      .x {
+        svg path {
+          fill: $black-low-color;
+        }
+      }
+    }
+  }
+
+  .course-no-credit {
+    margin-right: 15px;
+    border-color: $border-color-high;
+  }
+
+  .course-credit {
+    border-color: $green-medium-color;
+  }
+
+  .card {
+    min-height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .sidebar-container {
+    margin-top: 25px;
+    width: 25%;
+    position: relative;
+
+    > div {
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import '../../styles/index.scss';
+
+.root {
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid $border-color-high;
+
+  .section-container {
+    .title {
+      @include typo-heading-5($white-high-color);
+      font-weight: bold;
+      padding: 5px;
+
+      background-color: $black-medium-color;
+    }
+
+    .chapter {
+      @include typo-heading-5($black-highest-color);
+      position: relative;
+      padding-right: 185px;
+      margin: 8px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .free {
+      @include typo-heading-5($green-low-color);
+    }
+
+    .free-batch {
+      display: inline;
+      padding: 0.2em 0.6em 0.3em;
+      font-size: 75%;
+      font-weight: bold;
+      line-height: 1;
+      color: $white-high-color;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: 6px;
+      background-color: $green-lower-color;
+    }
+
+    .chapter-detail {
+      position: absolute;
+      top: -8px;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+    }
+
+    .duration {
+      width: 71px;
+      text-align: right;
+    }
+
+    .icons {
+      display: flex;
+      margin: 0;
+      border: 0;
+      outline: 0;
+      vertical-align: baseline;
+      margin-right: 8px;
+
+      svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 8px;
+      }
+    }
+  }
+}

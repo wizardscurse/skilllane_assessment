@@ -1,0 +1,10 @@
+@import '../../styles/index.scss';
+
+.root {
+  @include typo-heading-3($green-medium-color);
+  border-bottom: solid 1px #cccccc;
+  padding: 10px 15px;
+  margin-bottom: 16px;
+
+  width: 73%;
+}
