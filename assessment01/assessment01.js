@@ -73,7 +73,7 @@ class Calculate {
 }
 
 const findLargestPower = () => {
-  const number = Number(input.value);
+  const number = Number(input.value) - 1;
   const cal = new Calculate(number);
 
   output.innerHTML = `[${cal.largestPower.toString()}]`;
